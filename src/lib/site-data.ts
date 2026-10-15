@@ -106,8 +106,7 @@ export const SITE_DATA = {
       "Alumnus – Govt. City College, Chittagong",
       "Enrolment Candidate – Bangladesh Bar Council",
     ],
-    portraitImage:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1000&q=80",
+    portraitImage: "/shihab-uddin.jpg",
     portraitAlt:
       "Shihab Uddin, Apprentice Lawyer at Judge's Court, Chittagong",
     officeImage:

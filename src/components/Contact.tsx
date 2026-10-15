@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -91,16 +92,27 @@ export default function Contact() {
           
           {/* Left Column: Direct Attorney Office Details (5 cols) */}
           <div className="lg:col-span-5 space-y-8 bg-[#101B2C] text-white p-8 sm:p-10 border border-[#B89A62]/30 shadow-xl">
-            <div>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89A62] font-semibold">
-                Direct Chambers
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-white mt-1">
-                {SITE_DATA.attorney.firmName}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-2 font-light">
-                {SITE_DATA.attorney.title} • {SITE_DATA.attorney.name}
-              </p>
+            <div className="flex items-center space-x-4">
+              <div className="relative w-16 h-16 shrink-0 overflow-hidden border border-[#B89A62]/60 shadow-lg">
+                <Image
+                  src={SITE_DATA.attorney.portraitImage}
+                  alt={SITE_DATA.attorney.portraitAlt}
+                  fill
+                  sizes="64px"
+                  className="object-cover object-[center_15%]"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89A62] font-semibold">
+                  Direct Chambers
+                </span>
+                <h3 className="font-serif text-2xl text-white mt-0.5">
+                  {SITE_DATA.attorney.name}
+                </h3>
+                <p className="text-xs text-neutral-300 font-light mt-0.5">
+                  {SITE_DATA.attorney.title}
+                </p>
+              </div>
             </div>
 
             <div className="space-y-6 pt-6 border-t border-white/10 text-xs">

@@ -17,6 +17,7 @@ const sansFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shihabuddin.law"),
   title: "Shihab Uddin | Apprentice Lawyer | Judge's Court, Chittagong",
   description:
     "Official legal portfolio of Shihab Uddin, Apprentice Lawyer at Judge's Court, Chittagong. LL.B. from Southern University Bangladesh, alumnus of Govt. City College, Chittagong. Dedicated counsel in civil litigation, criminal defense, property law, and legal drafting.",
@@ -39,6 +40,21 @@ export const metadata: Metadata = {
       "Diligent legal advocacy, statutory precision, and dedicated chamber practice at Judge's Court, Chittagong, Bangladesh.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/shihab-uddin.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "Shihab Uddin, Apprentice Lawyer at Judge's Court, Chittagong",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shihab Uddin | Apprentice Lawyer | Judge's Court, Chittagong",
+    description:
+      "Diligent legal advocacy, statutory precision, and dedicated chamber practice at Judge's Court, Chittagong, Bangladesh.",
+    images: ["/shihab-uddin.jpg"],
   },
 };
 

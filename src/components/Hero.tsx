@@ -113,14 +113,14 @@ export default function Hero() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                  className="object-cover object-center filter saturate-[0.92] contrast-[1.05] transition-transform duration-700 hover:scale-105"
+                  className="object-cover object-[center_12%] filter contrast-[1.02] transition-transform duration-700 hover:scale-[1.03]"
                 />
 
                 {/* Subtle vignette gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#101B2C] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101B2C] via-[#101B2C]/20 to-transparent opacity-85" />
 
                 {/* Floating caption card */}
-                <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#101B2C]/90 backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#101B2C]/90 backdrop-blur-md border border-white/10 shadow-xl">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-serif text-lg text-white font-medium">{SITE_DATA.attorney.name}</p>
@@ -129,7 +129,7 @@ export default function Hero() {
                       </p>
                     </div>
                     <div className="text-right">
-                      <span className="inline-block text-[10px] uppercase tracking-wider text-neutral-400 bg-white/5 px-2.5 py-1 border border-white/10">
+                      <span className="inline-block text-[10px] uppercase tracking-wider text-[#D6BD8A] bg-white/5 px-2.5 py-1 border border-white/10">
                         Chambers Practice
                       </span>
                     </div>
@@ -137,10 +137,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Note about photo placeholder for the client */}
+              {/* Chambers attribution footer */}
               <div className="mt-3 text-right">
                 <span className="text-[10px] tracking-wider text-neutral-400 italic">
-                  * Chambers of Shihab Uddin • Judge&apos;s Court, Chittagong
+                  Chambers of Shihab Uddin • Judge&apos;s Court, Chittagong
                 </span>
               </div>
             </div>
