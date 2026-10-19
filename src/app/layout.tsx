@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/shihab-uddin.jpg",
-        width: 1024,
-        height: 1024,
+        url: "/picture/shihab-1.webp",
+        width: 1122,
+        height: 1032,
         alt: "Shihab Uddin, Apprentice Lawyer at Judge's Court, Chittagong",
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Shihab Uddin | Apprentice Lawyer | Judge's Court, Chittagong",
     description:
       "Diligent legal advocacy, statutory precision, and dedicated chamber practice at Judge's Court, Chittagong, Bangladesh.",
-    images: ["/shihab-uddin.jpg"],
+    images: ["/picture/shihab-1.webp"],
   },
 };
 

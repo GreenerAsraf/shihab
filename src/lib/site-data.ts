@@ -106,7 +106,7 @@ export const SITE_DATA = {
       "Alumnus – Govt. City College, Chittagong",
       "Enrolment Candidate – Bangladesh Bar Council",
     ],
-    portraitImage: "/shihab-uddin.jpg",
+    portraitImage: "/picture/shihab-1.webp",
     portraitAlt:
       "Shihab Uddin, Apprentice Lawyer at Judge's Court, Chittagong",
     officeImage:
@@ -353,8 +353,8 @@ export const SITE_DATA = {
       zip: "4000",
       country: "Bangladesh",
     },
-    phone: "+880 1800-000000",
-    email: "shihabuddin.law@gmail.com",
+    phone: "+880 1823669556",
+    email: "Shihab88.uddin@gmail.com",
     hours: "Saturday – Thursday: 9:00 AM – 6:00 PM (Court & Chambers)",
     emergencyNote:
       "Consultations at Judge's Court chambers or via prior appointment. Urgent bail and injunction reviews available.",
