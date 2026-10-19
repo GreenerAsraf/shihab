@@ -1,6 +1,6 @@
 "use client";
 
-import { Scale, ArrowUp, Award, Shield } from "lucide-react";
+import { Scale, ArrowUp, Award } from "lucide-react";
 import { SITE_DATA } from "@/lib/site-data";
 
 export default function Footer() {
@@ -11,27 +11,27 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#101B2C] text-white border-t border-[#B89A62]/30 relative z-20">
+    <footer className="bg-[#0A0A0A] text-white border-t border-white/10 relative z-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-white/10">
-          
-          {/* Col 1: Attorney Brand & Statement (5 cols) */}
+
+          {/* Brand */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 border border-[#B89A62] bg-[#17191D] flex items-center justify-center">
-                <Scale className="w-4 h-4 text-[#B89A62]" />
+              <div className="w-9 h-9 border border-white/20 bg-white/5 flex items-center justify-center">
+                <Scale className="w-4 h-4 text-white/60" />
               </div>
               <div>
-                <span className="block font-serif text-xl tracking-wider text-white font-medium">
+                <span className="block text-xl tracking-wider text-white font-semibold">
                   {SITE_DATA.attorney.name}
                 </span>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-[#B89A62]">
+                <span className="block text-[10px] uppercase tracking-[0.2em] text-white/35">
                   {SITE_DATA.attorney.credentials} • {SITE_DATA.attorney.firmName}
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-neutral-400 font-light leading-relaxed max-w-sm">
+            <p className="text-xs text-white/30 font-light leading-relaxed max-w-sm">
               Providing dedicated legal advocacy, precise documentation, and courtroom assistance at the Judge&apos;s Court, Chittagong, Bangladesh.
             </p>
 
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://www.facebook.com/shihabu007"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-[#B89A62] hover:border-[#B89A62] transition-colors"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:border-white/40 transition-colors"
                 aria-label="Facebook Profile"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="https://www.facebook.com/shihabu007"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-[#B89A62] hover:border-[#B89A62] transition-colors"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:border-white/40 transition-colors"
                 aria-label="Professional Profile"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export default function Footer() {
               </a>
               <a
                 href="#about"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-[#B89A62] hover:border-[#B89A62] transition-colors"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:border-white/40 transition-colors"
                 aria-label="Court Standing & Credentials"
               >
                 <Award className="w-3.5 h-3.5" />
@@ -68,90 +68,69 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Navigation Links (3 cols) */}
+          {/* Navigation */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#B89A62] font-semibold">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-white/40 font-semibold">
               Practice Overview
             </h4>
-            <ul className="space-y-2 text-xs text-neutral-400">
-              <li>
-                <a href="#about" className="hover:text-white transition-colors">
-                  Attorney Biography & Philosophy
-                </a>
-              </li>
-              <li>
-                <a href="#practice-areas" className="hover:text-white transition-colors">
-                  Practice Areas & Capabilities
-                </a>
-              </li>
-              <li>
-                <a href="#approach" className="hover:text-white transition-colors">
-                  Three-Stage Representation Model
-                </a>
-              </li>
-              <li>
-                <a href="#experience" className="hover:text-white transition-colors">
-                  Selected Matters & Case Precedents
-                </a>
-              </li>
-              <li>
-                <a href="#insights" className="hover:text-white transition-colors">
-                  Legal Commentary & Articles
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white transition-colors">
-                  Schedule Confidential Consultation
-                </a>
-              </li>
+            <ul className="space-y-2 text-xs text-white/30">
+              {[
+                { label: "Attorney Biography & Philosophy", href: "#about" },
+                { label: "Practice Areas & Capabilities", href: "#practice-areas" },
+                { label: "Three-Stage Representation Model", href: "#approach" },
+                { label: "Selected Matters & Case Precedents", href: "#experience" },
+                { label: "Legal Commentary & Articles", href: "#insights" },
+                { label: "Schedule Confidential Consultation", href: "#contact" },
+              ].map(({ label, href }) => (
+                <li key={href}>
+                  <a href={href} className="hover:text-white transition-colors">
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Chambers Contact (4 cols) */}
+          {/* Contact */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#B89A62] font-semibold">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-white/40 font-semibold">
               Chambers Address
             </h4>
-            <div className="text-xs text-neutral-400 space-y-1 leading-relaxed">
-              <p className="text-white font-medium">{SITE_DATA.attorney.firmName}</p>
+            <div className="text-xs text-white/30 space-y-1 leading-relaxed">
+              <p className="text-white/60 font-medium">{SITE_DATA.attorney.firmName}</p>
               <p>{SITE_DATA.contactInfo.address.line1}</p>
               <p>
                 {SITE_DATA.contactInfo.address.city}, {SITE_DATA.contactInfo.address.state} {SITE_DATA.contactInfo.address.zip}
               </p>
-              <p className="pt-2 text-neutral-300 font-medium">
-                Tel: {SITE_DATA.contactInfo.phone}
-              </p>
-              <p className="text-neutral-300">
-                Email: {SITE_DATA.contactInfo.email}
-              </p>
+              <p className="pt-2 text-white/50 font-medium">Tel: {SITE_DATA.contactInfo.phone}</p>
+              <p className="text-white/50">Email: {SITE_DATA.contactInfo.email}</p>
             </div>
           </div>
 
         </div>
 
-        {/* Legal Disclaimer Box required for Attorney Websites */}
-        <div className="my-8 p-4 bg-[#17191D] border border-white/5 text-[11px] text-neutral-400 leading-relaxed space-y-1.5">
-          <div className="flex items-center space-x-1.5 text-neutral-300 font-semibold uppercase tracking-wider text-[10px]">
-            <Shield className="w-3 h-3 text-[#B89A62]" />
-            <span>Legal Notice & Attorney Advertising Disclaimer</span>
+        {/* Disclaimer */}
+        <div className="my-8 p-4 bg-white/[0.03] border border-white/5 text-[11px] text-white/25 leading-relaxed space-y-1.5">
+          <div className="flex items-center space-x-1.5 text-white/40 font-semibold uppercase tracking-wider text-[10px]">
+            <span>Legal Notice &amp; Attorney Advertising Disclaimer</span>
           </div>
           <p>
             The information contained on this website is intended solely for general informational purposes and does not constitute formal legal advice. Viewing this website or communicating with {SITE_DATA.attorney.name} via electronic transmission does not create an attorney-client relationship. Prior case outcomes or matter summaries do not guarantee or predict similar results in future legal proceedings.
           </p>
         </div>
 
-        {/* Bottom Bar: Copyright and Back to Top */}
-        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-400 gap-4 pt-4">
+        {/* Bottom Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-white/20 gap-4 pt-4">
           <p>
             © {currentYear} {SITE_DATA.attorney.firmName}. All rights reserved. Attorney Advertising.
           </p>
           <button
             onClick={scrollToTop}
-            className="flex items-center space-x-2 text-neutral-300 hover:text-[#B89A62] transition-colors group focus:outline-none"
+            className="flex items-center space-x-2 text-white/30 hover:text-white transition-colors group focus:outline-none"
           >
             <span>Return to Top</span>
-            <div className="w-7 h-7 rounded-full border border-white/10 group-hover:border-[#B89A62] flex items-center justify-center transition-colors">
-              <ArrowUp className="w-3.5 h-3.5 text-[#B89A62]" />
+            <div className="w-7 h-7 rounded-full border border-white/10 group-hover:border-white/40 flex items-center justify-center transition-colors">
+              <ArrowUp className="w-3.5 h-3.5" />
             </div>
           </button>
         </div>

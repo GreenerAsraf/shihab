@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const serifFont = Cormorant_Garamond({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const sansFont = Plus_Jakarta_Sans({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -64,10 +57,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serifFont.variable} ${sansFont.variable} scroll-smooth`}>
-      <body className="min-h-screen flex flex-col bg-[#F7F4ED] text-[#17191D] antialiased selection:bg-[#B89A62]/30 selection:text-[#101B2C]">
+    <html lang="en" className={`${inter.variable} scroll-smooth dark`}>
+      <body className="min-h-screen flex flex-col bg-[#050505] text-[#ECEEF2] font-sans antialiased selection:bg-white/20 selection:text-white">
         {children}
       </body>
     </html>
   );
 }
+

@@ -7,7 +7,7 @@ export default function TrustHighlights() {
   return (
     <section
       id="trust-strip"
-      className="bg-[#17191D] text-white border-y border-[#B89A62]/20 relative z-20 py-10"
+      className="bg-[#0F0F0F] text-white border-y border-white/10 relative z-20 py-10"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
@@ -21,22 +21,21 @@ export default function TrustHighlights() {
               className={`flex flex-col justify-center ${index !== 0 ? "pt-6 md:pt-0 md:pl-8" : ""}`}
             >
               <div className="flex items-baseline space-x-2">
-                <span className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-[#D6BD8A]">
+                <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   {item.value}
                 </span>
               </div>
-              <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-white mt-1">
+              <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-white/50 mt-1">
                 {item.label}
               </h3>
-              <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+              <p className="text-xs text-white/30 mt-1 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Small configuration notice for transparency */}
-        <div className="mt-8 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] text-neutral-400">
+        <div className="mt-8 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] text-white/25">
           <span>Official Jurisdiction: Judge&apos;s Court, Chittagong &amp; Bangladesh Legal System</span>
           <span className="italic">* Dedicated legal service across civil, criminal &amp; commercial domains</span>
         </div>

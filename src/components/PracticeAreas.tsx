@@ -28,32 +28,32 @@ export default function PracticeAreas() {
   const [selectedArea, setSelectedArea] = useState<PracticeArea>(SITE_DATA.practiceAreas[0]);
 
   return (
-    <section id="practice-areas" className="py-24 lg:py-32 bg-[#101B2C] text-white relative">
-      {/* Background Decorative subtle lines */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#B89A62_1px,transparent_1px),linear-gradient(to_bottom,#B89A62_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+    <section id="practice-areas" className="py-24 lg:py-32 bg-[#0A0A0A] text-white relative">
+      {/* Subtle grid lines */}
+      <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-4">
           <div className="inline-flex items-center space-x-3">
-            <span className="w-8 h-[1px] bg-[#B89A62]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#B89A62] font-semibold">
+            <span className="w-8 h-[1px] bg-white/40" />
+            <span className="text-xs uppercase tracking-[0.25em] text-white/50 font-medium">
               Fields of Legal Practice
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight text-[#F7F4ED]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Strategic Counsel Across Complex Legal Terrains
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed">
-            Representing corporations, private clients, and institutions with rigorous attention to detail and trial-ready resolve. All practice areas are configurable to reflect real attorney capabilities.
+          <p className="text-sm sm:text-base text-white/40 font-light leading-relaxed">
+            Representing corporations, private clients, and institutions with rigorous attention to detail and trial-ready resolve.
           </p>
         </div>
 
-        {/* Editorial Layout: Interactive Left Selector & In-Depth Right Focus Panel */}
+        {/* Interactive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          {/* Left: Practice Area List (7 cols) */}
+
+          {/* Left List */}
           <div className="lg:col-span-7 space-y-3">
             {SITE_DATA.practiceAreas.map((area, index) => {
               const IconComponent = iconMap[area.iconName] || Scale;
@@ -71,40 +71,38 @@ export default function PracticeAreas() {
                     onClick={() => setSelectedArea(area)}
                     className={`w-full text-left p-6 transition-all duration-300 border flex items-center justify-between group ${
                       isSelected
-                        ? "bg-[#1A283E] border-[#B89A62] shadow-lg shadow-[#B89A62]/5"
-                        : "bg-[#17191D]/60 border-white/5 hover:border-white/20 hover:bg-[#17191D]"
+                        ? "bg-white/10 border-white/40 shadow-lg shadow-white/5"
+                        : "bg-white/[0.03] border-white/5 hover:border-white/20 hover:bg-white/[0.06]"
                     }`}
                   >
                     <div className="flex items-start space-x-5">
                       <div
                         className={`p-3 transition-colors ${
                           isSelected
-                            ? "bg-[#B89A62] text-[#101B2C]"
-                            : "bg-white/5 text-[#B89A62] group-hover:bg-[#B89A62]/20"
+                            ? "bg-white text-black"
+                            : "bg-white/5 text-white/50 group-hover:bg-white/10"
                         }`}
                       >
                         <IconComponent className="w-5 h-5" />
                       </div>
-
                       <div className="space-y-1">
-                        <span className="text-[10px] uppercase tracking-widest text-[#B89A62]">
+                        <span className="text-[10px] uppercase tracking-widest text-white/30">
                           0{index + 1} • Practice Domain
                         </span>
-                        <h3 className="font-serif text-xl sm:text-2xl text-white font-medium group-hover:text-[#D6BD8A] transition-colors">
+                        <h3 className={`text-xl sm:text-2xl font-semibold transition-colors ${isSelected ? "text-white" : "text-white/70 group-hover:text-white"}`}>
                           {area.title}
                         </h3>
-                        <p className="text-xs text-neutral-400 line-clamp-2 max-w-xl">
+                        <p className="text-xs text-white/35 line-clamp-2 max-w-xl">
                           {area.subtitle}
                         </p>
                       </div>
                     </div>
-
                     <div className="pl-4 shrink-0">
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all ${
                           isSelected
-                            ? "border-[#B89A62] text-[#B89A62] translate-x-1"
-                            : "border-white/10 text-neutral-500 group-hover:border-white/30 group-hover:text-white"
+                            ? "border-white/50 text-white translate-x-1"
+                            : "border-white/10 text-white/30 group-hover:border-white/30 group-hover:text-white/60"
                         }`}
                       >
                         <ChevronRight className="w-4 h-4" />
@@ -116,7 +114,7 @@ export default function PracticeAreas() {
             })}
           </div>
 
-          {/* Right: Detailed Domain Card with Highlights (5 cols) */}
+          {/* Right Detail Card */}
           <div className="lg:col-span-5 sticky top-28">
             <AnimatePresence mode="wait">
               <motion.div
@@ -125,36 +123,36 @@ export default function PracticeAreas() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#17191D] border border-[#B89A62]/30 p-8 sm:p-10 relative overflow-hidden shadow-2xl"
+                className="bg-[#111] border border-white/15 p-8 sm:p-10 relative overflow-hidden shadow-2xl"
               >
-                {/* Subtle top gold line accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B89A62] via-[#D6BD8A] to-[#B89A62]" />
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
 
                 <div className="space-y-6">
                   <div>
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89A62] font-semibold">
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-medium">
                       Featured Representation
                     </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl text-white mt-1">
+                    <h3 className="text-2xl sm:text-3xl text-white font-semibold mt-1">
                       {selectedArea.title}
                     </h3>
-                    <p className="text-xs text-[#D6BD8A] mt-1 font-medium">
+                    <p className="text-xs text-white/50 mt-1 font-medium">
                       {selectedArea.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                  <p className="text-sm text-white/50 leading-relaxed font-light">
                     {selectedArea.description}
                   </p>
 
                   <div className="pt-4 border-t border-white/10 space-y-3">
-                    <span className="text-xs uppercase tracking-wider text-neutral-400 block font-medium">
-                      Key Scope & Capabilities:
+                    <span className="text-xs uppercase tracking-wider text-white/30 block font-medium">
+                      Key Scope &amp; Capabilities:
                     </span>
                     <ul className="space-y-2.5">
                       {selectedArea.highlights.map((item, idx) => (
-                        <li key={idx} className="flex items-start space-x-3 text-xs text-neutral-300">
-                          <Check className="w-4 h-4 text-[#B89A62] mt-0.5 shrink-0" />
+                        <li key={idx} className="flex items-start space-x-3 text-xs text-white/50">
+                          <Check className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -164,7 +162,7 @@ export default function PracticeAreas() {
                   <div className="pt-6">
                     <a
                       href="#contact"
-                      className="w-full inline-flex items-center justify-center space-x-2 py-3.5 px-6 bg-[#B89A62] hover:bg-[#D6BD8A] text-[#101B2C] text-xs uppercase tracking-widest font-semibold transition-colors"
+                      className="w-full inline-flex items-center justify-center space-x-2 py-3.5 px-6 bg-white hover:bg-white/90 text-black text-xs uppercase tracking-widest font-bold transition-colors"
                     >
                       <span>Inquire About {selectedArea.title.split(" ")[0]}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -175,14 +173,13 @@ export default function PracticeAreas() {
             </AnimatePresence>
 
             <div className="mt-4 text-center">
-              <span className="text-[11px] text-neutral-400">
+              <span className="text-[11px] text-white/25">
                 Additional specialized matters available upon discrete consultation.
               </span>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );
