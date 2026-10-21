@@ -301,7 +301,7 @@ export default function Hero() {
         >
           {/* LEFT COLUMN: Synchronized Text & Information */}
           <div
-            className={`space-y-6 ${
+            className={`space-y-6 order-2 lg:order-1 ${
               viewMode === "split"
                 ? "lg:col-span-7"
                 : "lg:col-span-8 relative z-20 bg-[#050505]/85 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none p-6 lg:p-0 rounded-2xl border border-white/10 lg:border-none"
@@ -401,7 +401,7 @@ export default function Hero() {
 
           {/* RIGHT COLUMN: Synchronized Picture & Frame */}
           <div
-            className={`${
+            className={`order-1 lg:order-2 ${
               viewMode === "split"
                 ? "lg:col-span-5 relative"
                 : "lg:col-span-12 absolute inset-0 z-10 pointer-events-none opacity-40 lg:opacity-70"

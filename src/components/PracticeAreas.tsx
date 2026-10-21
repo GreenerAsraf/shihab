@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Briefcase,
@@ -28,7 +29,21 @@ export default function PracticeAreas() {
   const [selectedArea, setSelectedArea] = useState<PracticeArea>(SITE_DATA.practiceAreas[0]);
 
   return (
-    <section id="practice-areas" className="py-24 lg:py-32 bg-[#0A0A0A] text-white relative">
+    <section id="practice-areas" className="py-24 lg:py-32 bg-[#0d1624] text-white relative overflow-hidden">
+      {/* Background Image: pic3.jpeg with balanced semi-transparent overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <Image
+          src="/picture/pic3.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center filter contrast-[1.08] brightness-[0.50] saturate-[0.95]"
+        />
+        {/* Semi-transparent dark overlay: keeps picture clearly visible while protecting text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1624]/92 via-[#0d1624]/80 to-[#0d1624]/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1624] via-transparent to-[#0d1624]/70" />
+      </div>
+
       {/* Subtle grid lines */}
       <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 

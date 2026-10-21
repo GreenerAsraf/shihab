@@ -30,7 +30,7 @@ export default function Home() {
       <PracticeAreas />
 
       {/* 3-Stage Legal Methodology */}
-      <Approach />
+      {/* <Approach /> */}
 
       {/* Selected Matters & Representative Work */}
       <Experience />
@@ -39,7 +39,7 @@ export default function Home() {
       <Testimonials />
 
       {/* Insights & Legal Commentary */}
-      <Insights />
+      {/* <Insights /> */}
 
       {/* Consultation Conversion Section */}
       <ConsultationCTA />

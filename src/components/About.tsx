@@ -7,9 +7,20 @@ import { SITE_DATA } from "@/lib/site-data";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-[#050505] text-white relative">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
+    <section id="about" className="py-24 lg:py-32 bg-[#0c121d] text-white relative overflow-hidden">
+      {/* Background Image: pic2.jpeg with balanced semi-transparent overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <Image
+          src="/picture/pic2.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center filter contrast-[1.08] brightness-[0.50] saturate-[0.95]"
+        />
+        {/* Semi-transparent dark overlay: keeps picture clearly visible while protecting text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c121d]/92 via-[#0c121d]/80 to-[#0c121d]/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c121d] via-transparent to-[#0c121d]/70" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">

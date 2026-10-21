@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import PageLoaderWrapper from "@/components/PageLoaderWrapper";
 import "./globals.css";
 
 const inter = Inter({
@@ -49,6 +50,16 @@ export const metadata: Metadata = {
       "Diligent legal advocacy, statutory precision, and dedicated chamber practice at Judge's Court, Chittagong, Bangladesh.",
     images: ["/picture/shihab-1.webp"],
   },
+  icons: {
+    icon: [
+      { url: "/picture/favicon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/picture/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -59,6 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth dark`}>
       <body className="min-h-screen flex flex-col bg-[#050505] text-[#ECEEF2] font-sans antialiased selection:bg-white/20 selection:text-white">
+        <PageLoaderWrapper />
         {children}
       </body>
     </html>

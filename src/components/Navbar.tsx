@@ -10,9 +10,9 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Practice Areas", href: "#practice-areas" },
-  { name: "Approach", href: "#approach" },
+  // { name: "Approach", href: "#approach" },
   { name: "Experience", href: "#experience" },
-  { name: "Insights", href: "#insights" },
+  // { name: "Insights", href: "#insights" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -72,13 +72,13 @@ export default function Navbar() {
 
           {/* Header CTA */}
           <div className="hidden lg:flex items-center space-x-5">
-            <a
+            {/* <a
               href={`tel:${SITE_DATA.contactInfo.phone.replace(/[^0-9+]/g, "")}`}
               className="flex items-center space-x-2 text-xs text-white/50 hover:text-white transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-white/40" />
               <span className="tracking-wider">{SITE_DATA.contactInfo.phone}</span>
-            </a>
+            </a> */}
             <a
               href="#contact"
               className="inline-flex items-center space-x-2 px-5 py-2.5 text-xs uppercase tracking-wider font-semibold bg-white text-black hover:bg-white/90 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black"
